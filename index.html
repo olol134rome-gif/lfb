@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UKRNSTS I LFB — London Fire Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#"><img src="https://learninglegacy.crossrail.co.uk/wp-content/uploads/2017/03/HS30_lfb_logo.jpg" alt="London Fire Brigade logo"><span><b>UKRNSTS I LFB</b><small>London Fire Service • ER:LC Roleplay</small></span></a>
+  <nav><a href="#home">Home</a><a href="#incidents">Incidents</a><a href="#history">Where We've Been</a><a href="#applications">Applications</a><a href="#ranks">Ranks</a><a href="#gallery">Gallery</a></nav>
+  <button id="loginBtn" class="profile-btn">Sign in with Roblox</button>
+</header>
+
+<section id="home" class="hero">
+ <div class="hero-copy">
+  <p class="eyebrow">UKRNSTS I LFB • EMERGENCY RESPONSE ROLEPLAY</p>
+  <h1>Trusted to serve<br><span>and protect London.</span></h1>
+  <p>Professional London Fire Brigade-inspired roleplay for Emergency Response: Liberty County.</p>
+  <div class="hero-actions"><a class="btn red" href="#applications">Applications</a><a class="btn dark" href="#history">Where we've been</a></div>
+ </div>
+ <div class="hero-panel"><span class="live-dot"></span><b>Community status</b><strong>Recruitment open for SFF</strong><p>All other applications are currently closed.</p></div>
+</section>
+
+<main>
+<section class="section" id="incidents">
+ <div class="section-title"><div><p class="eyebrow">OPERATIONS</p><h2>Recent incidents</h2><p>Community-recorded roleplay incidents. These are not real emergency dispatches.</p></div><button class="outline" onclick="openAdmin()">Edit content</button></div>
+ <div id="incidentGrid" class="cards"></div>
+</section>
+
+<section class="section grey" id="history">
+ <div class="section-title"><div><p class="eyebrow">COMMUNITY HISTORY</p><h2>Where we've been</h2><p>Keep a record of training days, major roleplay calls, events and milestones.</p></div></div>
+ <div id="historyGrid" class="timeline"></div>
+</section>
+
+<section class="section" id="applications">
+ <div class="section-title"><div><p class="eyebrow">JOIN THE SERVICE</p><h2>Applications</h2><p>Applicants must sign in before accessing an application.</p></div></div>
+ <div id="applicationGrid" class="app-grid"></div>
+</section>
+
+<section class="section grey" id="ranks">
+ <p class="eyebrow">STRUCTURE</p><h2>Ranks</h2>
+ <p class="muted">Editable rank structure for the UKRNSTS I LFB roleplay group.</p>
+ <div id="rankGrid" class="rank-grid"></div>
+</section>
+
+<section class="section" id="gallery">
+ <div class="section-title"><div><p class="eyebrow">ER:LC MEDIA</p><h2>Gallery</h2><p>Community and game imagery. Credit the original creator whenever you add your own screenshots.</p></div></div>
+ <div class="gallery">
+  <figure><img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/9/b/f/9bf3f52088e58133a944cf0a6fd795bc98cd9dfe.jpeg" alt="ER:LC emergency roleplay scene"><figcaption>ER:LC emergency response scene</figcaption></figure>
+  <figure><img src="https://pbs.twimg.com/media/Gztr1sHXYAAR_lG.jpg" alt="ER:LC fire engine scene"><figcaption>ER:LC fire response scene</figcaption></figure>
+  <figure><img src="https://www.roblox.com/asset-thumbnail/image?assetId=2534724415&width=768&height=432&format=png" alt="Emergency Response Liberty County"><figcaption>Emergency Response: Liberty County</figcaption></figure>
+ </div>
+</section>
+</main>
+
+<footer><div><b>UKRNSTS I LFB</b><p>Unofficial ER:LC roleplay community. Not affiliated with London Fire Brigade or Roblox.</p></div><div><a href="https://www.london-fire.gov.uk/incidents/" target="_blank">Official LFB incidents ↗</a><br><a href="https://www.roblox.com/games/2534724415/Emergency-Response-Liberty-County" target="_blank">ER:LC on Roblox ↗</a></div></footer>
+
+<div class="modal" id="loginModal"><div class="modal-box"><button class="x" onclick="closeModal('loginModal')">×</button><h2>Roblox sign-in</h2><p>This site is prepared for Roblox OAuth 2.0. A real login requires a Roblox OAuth app and a secure backend; GitHub Pages alone cannot safely keep OAuth secrets.</p><button class="btn red wide" onclick="demoLogin()">Continue with demo profile</button><p class="tiny">Demo mode only — do not treat this as real authentication.</p></div></div>
+
+<div class="modal" id="applicationModal"><div class="modal-box wide-box"><button class="x" onclick="closeModal('applicationModal')">×</button><div id="applicationForm"></div></div></div>
+
+<div class="modal" id="adminModal"><div class="modal-box admin"><button class="x" onclick="closeModal('adminModal')">×</button><h2>Site Control Centre</h2><p class="muted">This editor saves changes in this browser. For shared multi-user editing, connect a real database/CMS.</p>
+ <label>Site title<input id="adminTitle"></label>
+ <label>Hero description<textarea id="adminHero"></textarea></label>
+ <label>Where we've been — add entry<textarea id="historyInput" placeholder="Date | Title | Description"></textarea></label>
+ <label>Application statuses<textarea id="statusInput"></textarea></label>
+ <div class="admin-actions"><button class="btn red" onclick="saveAdmin()">Save changes</button><button class="outline" onclick="resetAdmin()">Reset demo data</button></div>
+</div></div>
+<script src="script.js"></script>
+</body>
+</html>
